@@ -36,9 +36,10 @@ console.log(`В списке ${categoriesEl.length} категории`);
 // const itemsLength = element.querySelectorAll('li').length;
 // console.log(`Категория: ${title} / Количество элементов: ${itemsLength}`);
 // });
-const ul = Array.from(document.querySelector('#categories').children);
+const ul = document.querySelector('#categories').children;
 for (let elem of ul) {
     let category = elem.firstElementChild.textContent;   
     let quantityElem = elem.lastElementChild.children.length;
     console.log(`Категория: ${category} \nКоличество элементов: ${quantityElem}`);
 };
+
