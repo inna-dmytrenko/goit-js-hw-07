@@ -19,3 +19,33 @@
 // Создай функцию destroyBoxes(), которая
 // очищает div#boxes.
 
+const render = document.querySelector('[data-action=render]');
+const destroy = document.querySelector('[data-action=destroy]');
+const boxes = document.querySelector('#boxes');
+// console.log(render);
+// console.log(destroy);
+// console.log(boxes);
+
+render.addEventListener('click', e => {
+    const input = document.querySelector('input');
+    let amount = +input.value;
+    createBoxes(amount);
+});
+function createBoxes(amount) {
+        let basicSize = 30;
+        let fragment = document.createDocumentFragment();
+        for (let i = 0; i < amount; i++) {
+            let size = basicSize + i * 10;
+            let itemdiv = document.createElement("div");
+            itemdiv.style.cssText = `width: ${size}px; height: ${size}px; background-color: rgba(${random()}, ${random()}, ${random()} )`;
+            fragment.appendChild(itemdiv);
+        }
+        boxes.appendChild(fragment);
+    }
+destroy.addEventListener('click', e => {
+boxes.innerHTML = "";
+   });
+function random() {
+  return Math.floor(Math.random() * 256);
+}
+

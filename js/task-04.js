@@ -4,12 +4,12 @@
 // Создай переменную counterValue в которой будет хранится текущее значение счетчика.
 // Создай функции increment и decrement для увеличения и уменьшения значения счетчика
 // Добавь слушатели кликов на кнопки, вызовы функций и обновление интерфейса
-const wrap_button = {
-  sub: document.querySelector("[data-action='increment']"),
-  add: document.querySelector("[data-action='decrement']"),
-  span: document.querySelector('#value'),
-  wrapper: document.querySelector('#counter '),
-};
+
+  const sub = document.querySelector("[data-action='increment']");
+  const add = document.querySelector("[data-action='decrement']");
+  const span = document.querySelector('#value');
+  const wrapper = document.querySelector('#counter ');
+  
 let counterValue = 0;
 function increment(){
 	counterValue +=1;
@@ -21,5 +21,5 @@ function decrement(){
 }
 
 
-wrap_button.sub.addEventListener('click', increment);
-wrap_button.add.addEventListener('click', decrement);
+sub.addEventListener('click', increment);
+add.addEventListener('click', decrement);
