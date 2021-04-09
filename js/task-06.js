@@ -9,17 +9,14 @@
 // неправильное - красным.
 // Для добавления стилей, используй CSS-классы valid 
 // и invalid.
-
-const input = document.getElementById("validation-input");
-console.log(input)
-
-input.addEventListener('blur', e => {
-    console.log(e)
-    if (input.getAttribute('data-length') > (input.value.length)) {
-        input.classList.remove('valid');
-        input.classList.add('invalid');
+// const input = ;
+document.getElementById("validation-input").onblur = function (el) {
+    console.log(el);
+   if (this.getAttribute('data-length') > this.value.length || (this.getAttribute('data-length') < (this.value.length) )) {
+        this.classList.remove('valid');
+        this.classList.add('invalid');
     } else {
-        input.classList.remove('invalid');
-        input.classList.add('valid');
-    }
-})
+        this.classList.remove('invalid');
+        this.classList.add('valid');
+    } 
+};

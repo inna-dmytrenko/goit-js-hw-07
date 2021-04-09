@@ -28,11 +28,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-
-for (let el of images) {
-   const elLi = document.querySelector('#gallery')
+images.map(el => {
+  const elLi = document.querySelector('#gallery')
     elLi.insertAdjacentHTML('beforeEnd', `<li><img src="${el.url}" alt="${el.alt}"></li>`);
+})
+// for (let el of images) {
+//    const elLi = document.querySelector('#gallery')
+//     elLi.insertAdjacentHTML('beforeEnd', `<li><img src="${el.url}" alt="${el.alt}"></li>`);
 
-}
+// }
     
 
