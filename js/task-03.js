@@ -28,14 +28,13 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-images.map(el => {
-  const elLi = document.querySelector('#gallery')
-    elLi.insertAdjacentHTML('beforeEnd', `<li><img src="${el.url}" alt="${el.alt}"></li>`);
-})
-// for (let el of images) {
-//    const elLi = document.querySelector('#gallery')
-//     elLi.insertAdjacentHTML('beforeEnd', `<li><img src="${el.url}" alt="${el.alt}"></li>`);
+const itemsUl = document.querySelector('#gallery');
+const imagesItem = images.map(({ url, alt }) => {
+  const elLi = document.createElement('li');
+  elLi.insertAdjacentHTML('beforeEnd', `<li><img src="${url}" alt="${alt}"></li>`);
+  return elLi;
+});
+itemsUl.append(...imagesItem);
 
-// }
-    
+
 
